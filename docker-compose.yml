@@ -1,0 +1,25 @@
+version: '3.8.0'
+services:
+ movie-pi-Q71MBS:
+  build:
+    context: MoviePi_Q71MBS
+  image: moviepi_q71mbs:latest
+  networks:
+   - movie-network
+ movie-e-Q71MBS:
+  build:
+    context: MovieE_Q71MBS
+  image: moviee_q71mbs:latest
+  networks:
+   - movie-network
+ MovieStream_Q71MBS:
+  build:
+    context: MovieStream_Q71MBS
+  image: moviestream_q71mbs:latest
+  ports:
+   - 5000:5000
+  networks:
+   - movie-network
+networks:
+  movie-network:
+    driver: bridge

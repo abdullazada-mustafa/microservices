@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: MovieStream_Q71MBS
+grpc:
+  server:
+    port: 5000
+  client:
+    movie-1:
+     address: 'dns:///movie-pi-Q71MBS'
+     enableKeepAlive: true
+     keepAliveWithoutCalls: true
+     negotiationType: plaintext
+    movie-2:
+     address: 'dns:///movie-e-Q71MBS'
+     enableKeepAlive: true
+     keepAliveWithoutCalls: true
+     negotiationType: plaintext
